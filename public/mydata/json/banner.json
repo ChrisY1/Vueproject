@@ -1,0 +1,16 @@
+[
+    {
+        "_id":"5c8afeea200dd7151cd9465a",
+        "content":"\u003cp\u003e\u003cbr\u003e\u003c/p\u003e",
+        "title":"nav1",
+        "sub_title":"",
+        "auth":"",
+        "dataName":"banner",
+        "icon":"undefined",
+        "banner":"/mydata/img/banner1.png",
+        "detail":{"auth":"","content":"","icon":"/upload/noimage.png"},
+        "des":null
+    },
+{"_id":"5c8aff14200dd7151cd9465b","content":"\u003cp\u003e\u003cbr\u003e\u003c/p\u003e","title":"nav2","sub_title":"","auth":"","dataName":"banner","icon":"undefined","banner":"/mydata/img/banner2.png","detail":{"auth":"","content":"","icon":"/upload/noimage.png"},"des":null},
+{"_id":"5c8aff5a200dd7151cd9465c","content":"\u003cp\u003e\u003cbr\u003e\u003c/p\u003e","title":"nav3","sub_title":"","auth":"","dataName":"banner","icon":"undefined","banner":"/mydata/img/banner3.png","detail":{"time":1.552613209982e+12,"icon":"/upload/noimage.png"}}
+]

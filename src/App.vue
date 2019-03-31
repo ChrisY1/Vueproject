@@ -1,31 +1,60 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app" >
+    
+     
+      <app-header v-show="bhead"></app-header>
+      <!-- <home></home> -->
+      <router-view></router-view>
+     
+      <app-footer v-show="bfoot"></app-footer> 
+
+    
+    
   </div>
 </template>
+<script>
+
+import AppHeader from './common/AppHeader'
+import AppFooter from './common/AppFooter'
+
+import {mapGetters} from 'vuex';
+import * as types from './store/types.js'
+// import Home from './components/Home'
+
+export default{
+  components:{AppHeader,AppFooter},
+  computed:mapGetters([
+    'bhead','bfoot'
+  ]),
+  watch:{
+    $route:{
+      handler(to){
+      let path = to.path;
+      // console.log(path)
+      this.checkpath(path);
+    },
+    immediate:true
+    }
+  },
+  methods:{
+    checkpath(path){
+      if(/home|category|user|search/.test(path)){
+      
+
+        this.$store.dispatch(types.VIEW_HEADER,true);
+        this.$store.dispatch(types.VIEW_FOOTER,true)
+
+      }
+      if(/login|reg|detail/.test(path)){
+        this.$store.dispatch(types.VIEW_HEADER,false)
+        this.$store.dispatch(types.VIEW_FOOTER,false)
+
+      }
+    }
+  }
+}
+</script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
